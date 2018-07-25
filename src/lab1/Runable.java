@@ -1,5 +1,12 @@
 package lab1;
-import java.util.Scanner;
+
+/**
+ * This is the runnable class for lab 1
+ * sample output has been attach to the .txt file in the package
+ * 
+ * @author Luo Zeting ID 16938158
+ * @see https://github.com/HicirTech/AUT-ADA
+ */
 public class Runable {
 
 	public static void main(String[] args) {
@@ -8,9 +15,7 @@ public class Runable {
 		fibonacci.tryOne();
 		fibonacci.tryTwo();
 		fibonacci.tryThree();
-		System.out.println("ERROR IN TRY FOUR");
 		fibonacci.tryFour();
-		
 	}
 
 }
