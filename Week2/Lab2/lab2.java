@@ -18,14 +18,14 @@ public class lab2 {
 		this.repeat=new ArrayList<>();
 	}
 	public boolean lookFor() {
-		int i = getRamdom(); // get a ramdom not repeat index 
+		int i = getRamdom(); // get a random not repeat index 
 		repeat.add(i); //  add it to repeat list, so that this index will not show up again
 						// it is equal to search in the subArray
 		return (array[i]==value)?true:(repeat.size()==array.length)?false:lookFor();
 							// if value found return true
 							// if value not found in the array return false
 							// if value not found and it is not the end of the array
-							//     go to next index lookfor
+							// go to next index lookfor
 	}		
 	
 	private int getRamdom()

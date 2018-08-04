@@ -17,7 +17,7 @@ public class Runable {
 		System.out.println("Please input number of size of the array  Warning: A large size array may course stack overflow");
 		int [] array = new int[new Scanner(System.in).nextInt()];
 		for(int i = 0; i!=array.length;i++)
-			array[i]=i;		
+			array[i]=i;		//give a sorted array
 		System.out.println("Please input a number to look for:");
 		lab2 a = new lab2(array,new Scanner(System.in).nextInt());
 	
