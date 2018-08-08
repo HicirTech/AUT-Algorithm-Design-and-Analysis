@@ -1,6 +1,6 @@
 package lab3;
 import java.util.*;
-public class Graph<T> {
+public class notTheDFSGraph<T> {
 
 	private double[][] matrix;
 	private T[] vertex;
@@ -8,7 +8,7 @@ public class Graph<T> {
 	private boolean noNext = false;	
 	private List<List<T>> result = new ArrayList<>();
  
-	public Graph(double[][] matrix, T[] vertex) {
+	public notTheDFSGraph(double[][] matrix, T[] vertex) {
 		this.matrix = matrix;
 		this.vertex = vertex;
 		vertexNum = matrix.length;

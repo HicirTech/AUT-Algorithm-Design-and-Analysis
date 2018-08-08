@@ -1,6 +1,6 @@
 package lab3;
 
-public class Runable {
+public class notRunable {
 
 	public static void main(String[] args)
 	{
@@ -19,7 +19,7 @@ public class Runable {
 				{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
 				{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
 				{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
-        Graph <String> graph = new  Graph<>(matrix, vertex);
+        notTheDFSGraph <String> graph = new  notTheDFSGraph<>(matrix, vertex);
         System.out.println(graph.startSearch());
 
 	}
