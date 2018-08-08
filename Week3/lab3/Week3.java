@@ -12,6 +12,7 @@ public class Week3 {
 		System.out.println("The time of using stack is: "+(System.nanoTime()-startTime));
 		
 		startTime=System.nanoTime();
+		graph=buildGraph();
 		recursiveTraverse(graph);
 		System.out.println("The time of using recursion is: "+(System.nanoTime()-startTime));
 		//System.out.println("Finished!");
@@ -122,8 +123,8 @@ public class Week3 {
 				
 			}while(!traverseStack.isEmpty());
 			
-			//System.out.println("Branch finished!");
-			//System.out.println();
+			System.out.println("Branch finished!");
+			System.out.println();
 		}
 		
 		
@@ -136,14 +137,14 @@ public class Week3 {
 		{
 			currentVertex=graph.get(i);
 			recursivePath(currentVertex);
-			//System.out.println("Branch finished!");
-			//System.out.println();
+			System.out.println("Branch finished!");
+			System.out.println();
 		}
 		
 	}
 	
 	public static void recursivePath(Vertex v) {
-		//System.out.println("Current vertex is "+v.name);
+		System.out.println("Current vertex is "+v.name);
 		if(!v.isTheEnd())
 		{
 			v.unvisitedOutneighbour().previous=v;
@@ -153,7 +154,7 @@ public class Week3 {
 		else
 		{
 			v.isVisited=true;
-			//System.out.println(v.name+ " is visited!");
+			System.out.println(v.name+ " is visited!");
 			if(v.previous!=null)
 				recursivePath(v.previous);
 		}
