@@ -4,6 +4,7 @@ public class Runable {
 
 	public static void main(String[] args)
 	{
+		// this is not the matrix of G3
 		String[] vertex = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k" };
 		double[][] matrix = { 
 				{ 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
