@@ -9,16 +9,13 @@ public class Nodes   implements Comparable<Nodes>{
 		this.key=key;
 		this.value=value;
 	}
-	Nodes()
-	{
-	}
+	Nodes(){}
 	
 
 	public String toString()
 	{
 		return  "Key["+this.key+"] Value["+this.value+"]";
 	}
-
 
 	@Override
 	public int compareTo(Nodes arg0) {
