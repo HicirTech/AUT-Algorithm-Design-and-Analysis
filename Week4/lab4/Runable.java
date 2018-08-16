@@ -30,13 +30,6 @@ public class Runable {
 		 ArraySize();
 		 ArrayRemove(300);
 		 
-		 HeapAdd(1000);
-		 HeapSize();
-		 HeapRemove(1000);
-		
-		 ArrayAdd(300);
-		 ArraySize();
-		 ArrayRemove(1000);
 		 
 		 
 		 
@@ -99,6 +92,7 @@ public class Runable {
 		 long start =System.nanoTime();
 		 a.findLast();
 		 long end = System.nanoTime();
+		 System.out.println("heap size finsh");
 		 System.out.println("used time "+(end-start)+" nano second for " + 	 a.findLast() +" elements");
 		 System.out.println("Every time for remove each element is "+((end-start)/ a.findLast())+" nano second\n"); 
 	 }
@@ -107,6 +101,7 @@ public class Runable {
 		 long start =System.nanoTime();
 		 b.findLast();
 		 long end = System.nanoTime();
+		 System.out.println("array size finsh");
 		 System.out.println("used time "+(end-start)+" nano second for " + 	 b.findLast() +" elements");
 		 System.out.println("Every time for remove each element is "+((end-start)/ b.findLast())+" nano second\n"); 
 	 }
