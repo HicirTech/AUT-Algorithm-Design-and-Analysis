@@ -13,9 +13,9 @@ public class Runable {
 		
 		Fibonacci fibonacci = new Fibonacci();
 		fibonacci.tryOne();
-		fibonacci.tryTwo();
-		fibonacci.tryThree();
-		fibonacci.tryFour();
+		//fibonacci.tryTwo();
+		//fibonacci.tryThree();
+	//	fibonacci.tryFour();
 	}
 
 }

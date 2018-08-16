@@ -38,6 +38,10 @@ public class Nodes{
 		this.out.add(out);
 		this.checkweight.put(out, weight);
 	}
+	void addOut(Nodes out)
+	{
+		this.out.add(out);
+	}
 	public String toString()
 	{
 		return this.name;
