@@ -11,6 +11,7 @@ public class Nodes{
 	boolean isVisited;
 	Nodes in = null;
 	String name;
+	private int dist;
 	Nodes()
 	{
 		
@@ -42,9 +43,16 @@ public class Nodes{
 	{
 		this.out.add(out);
 	}
+	
+	public int getDist() {
+		return dist;
+	}
+	public void setDist(int dist) {
+		this.dist = dist;
+	}
 	public String toString()
 	{
-		return this.name;
+		return this.name+" :Dist :"+this.getDist();
 	}
 
 }

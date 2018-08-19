@@ -30,9 +30,6 @@ public class Runable {
 		 ArraySize();
 		 ArrayRemove(300);
 		 
-		 
-		 
-		 
 	 }
 	
 	 

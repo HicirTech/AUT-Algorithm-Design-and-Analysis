@@ -5,7 +5,7 @@ import java.util.Queue;
 public class BFS {
 	
 	static Queue<Nodes> order = new LinkedList<>();
-	
+	static int a=0;
 	public static void main (String[] args)
 	{
 		 Nodes n1 = new Nodes("1");
@@ -68,7 +68,9 @@ public class BFS {
 	
 	static void BFS()
 	{
+		
 		Nodes current = order.poll();
+		
 		System.out.println("work: " +current);
 		current.isVisited=true;
 		ArrayList<Nodes> outer =  (ArrayList<Nodes>) current.out.clone();
@@ -81,10 +83,13 @@ public class BFS {
 					continue;
 				}
 				order.add(e);
+				
 			}
 		}
+		
 		if(!order.isEmpty())
 		{
+			
 			BFS();
 		}
 	}

@@ -1,36 +1,54 @@
-import java.util.Arrays;
 
 public class merge {
 
 	int [][] input;
-	merge(int[][] input)
+	merge()
 	{
-		this.input=input;
+		
+	}
+	public int[] doMarge(int[][] array)
+	{
+		int[] temp = array[0];
+		for(int i=1;i!=array.length;i++)
+		{
+			temp=this.merge(array[i],temp);
+		}
+		return temp;
 	}
 	
-	void merge()
+	public int[] merge(int[] s1, int[] s2)
 	{
-		int[] firstOutPut;
-		for(int i=1;i<=input.length;i+=2)
+		int i=0;
+		int j=0;
+		int k=0;
+		int[] res = new int[s1.length+s2.length];
+		while(i<s1.length&&j<s2.length)
 		{
-			try
+			if(s1[i]<s2[j])
 			{
-				firstOutPut=new int[this.input[i-1].length+input[i].length];
-				for(int j=0;j!=input[i-1].length;j++)
-				{
-					firstOutPut[j]=input[i-1][j];
-				}
-				for(int j=0;j!=input[i].length;j++)
-				{
-					firstOutPut[input[i-1].length+j]=input[i][j];
-				}
-				System.out.println(Arrays.toString(firstOutPut));
+				res[k]=s1[i];
+				i++;
+				k++;
 			}
-			catch(ArrayIndexOutOfBoundsException e)
+			else
 			{
-				
+				res[k]=s2[j];
+				j++;
+				k++;
 			}
-			}
+			
+		}
+		while(i<s1.length)
+		{
+			res[k++]=s1[i++];
+			
+		}
+		while(j<s2.length)
+		{
+			res[k++]=s2[j++];
+		}
+		return res;
 	}
+		
 }
 
