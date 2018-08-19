@@ -53,6 +53,8 @@ public class Fib {
 		}
 		return B[0][1];
 	}
+	
+	
 	public static int[][]multiply2by2(int[][]m, int[][]n){
 		int a = m[0][0] * n[0][0] +m[0][1] * n[1][0];
 		int b = m[0][0] * n[0][1] +m[0][1] * n[1][1];
@@ -66,12 +68,13 @@ public class Fib {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter a value: ");
 		int fib = scan.nextInt();
-		System.out.println("Answer from method 1: " + method1(fib));
-		System.out.println(System.nanoTime());
-		System.out.println("Answer from method 2: " + method2(fib));
-		System.out.println(System.nanoTime());
-		System.out.println("Answer from method 3: " + method2(fib));
-		System.out.println(System.nanoTime());
+		
+		//System.out.println("Answer from method 1: " + method1(fib));
+		//System.out.println(System.nanoTime());
+		//System.out.println("Answer from method 2: " + method2(fib));
+		//System.out.println(System.nanoTime());
+		//System.out.println("Answer from method 3: " + method2(fib));
+		//System.out.println(System.nanoTime());
 		System.out.println("Answer from method 4: " + method4(fib));
 		System.out.println(System.nanoTime());
 	}
