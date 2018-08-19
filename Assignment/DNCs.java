@@ -1,9 +1,6 @@
-import java.util.Arrays;
-
 public class DNCs {
-
 	
-    void Divide(int arr[], int start, int middle, int end)
+   private void Divide(int arr[], int start, int middle, int end)
     {
       
         int firstSize = middle - start + 1;
@@ -72,19 +69,18 @@ public class DNCs {
     	this.printArray(totalArray);
     }
 
-    void doDivideAndConquer(int arr[], int start, int end)
+    private void doDivideAndConquer(int arr[], int start, int end)
     {
         if (start < end)
         {
             int middle = (start+end)/2;
             this.doDivideAndConquer(arr, start, middle);
             this.doDivideAndConquer(arr , middle+1, end);
-            this.Divide(arr, start, middle, end);
-           
+            this.Divide(arr, start, middle, end);  
         }
     }
  
-    void printArray(int arr[])
+    private void printArray(int arr[])
     {
     	System.out.print("Divide and conquer:");
         int n = arr.length;

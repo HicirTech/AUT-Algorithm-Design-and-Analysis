@@ -1,11 +1,6 @@
 
-public class merge {
+public class Merge {
 
-	int [][] input;
-	merge()
-	{
-		
-	}
 	public int[] doMarge(int[][] array)
 	{
 		int[] temp = array[0];
@@ -13,10 +8,12 @@ public class merge {
 		{
 			temp=this.merge(array[i],temp);
 		}
+		
+		printArray(temp);
 		return temp;
 	}
 	
-	public int[] merge(int[] s1, int[] s2)
+	private int[] merge(int[] s1, int[] s2)
 	{
 		int i=0;
 		int j=0;
@@ -49,6 +46,13 @@ public class merge {
 		}
 		return res;
 	}
-		
+	private void printArray(int arr[])
+    {
+        int n = arr.length;
+        System.out.print("Merge:");
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
 }
 

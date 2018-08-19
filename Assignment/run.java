@@ -1,17 +1,25 @@
 import java.util.Random;
-import java.util.Arrays;
 public class run {
 
 	public static void main(String[] args) {
 		
 		DNCs b = new DNCs();
-		merge c = new merge();
+		Merge c = new Merge();
 	
 		int[][] f = assignValue(ramdonArrays());
 		
-		System.out.println("merge:"+Arrays.toString(c.doMarge(f)));
+		c.doMarge(f);
 		b.doDNC(f);
 
+		int[][] g = assignValue(makeFixedSizeArray(10,10));
+		c.doMarge(g);
+		b.doDNC(g);
+	}
+	
+	static int[][] makeFixedSizeArray(int x,int y)
+	{
+		System.out.println("[make KxN array]This is a "+x+"x"+y+" array");
+		return new  int[x][y];
 	}
 	
 	static int[][] ramdonArrays()
