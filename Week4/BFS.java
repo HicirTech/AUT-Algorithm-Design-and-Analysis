@@ -5,7 +5,7 @@ import java.util.Queue;
 public class BFS {
 	
 	static Queue<Nodes> order = new LinkedList<>();
-	static int a=0;
+
 	public static void main (String[] args)
 	{
 		 Nodes n1 = new Nodes("1");

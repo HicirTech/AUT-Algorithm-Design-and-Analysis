@@ -1,15 +1,23 @@
-
+package Question_3;
+/**
+ * 
+ * @author Luo Zeting ID:16938158
+ *
+ */
 public class Merge {
 
 	public int[] doMarge(int[][] array)
 	{
+		long start=System.nanoTime();
 		int[] temp = array[0];
 		for(int i=1;i!=array.length;i++)
 		{
 			temp=this.merge(array[i],temp);
 		}
 		
-		printArray(temp);
+		//printArray(temp);
+		long ends = System.nanoTime();
+	    System.out.println("Merge took "+(ends-start)+" nano seconds to finish");
 		return temp;
 	}
 	
