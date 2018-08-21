@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 public class run {
 
@@ -11,9 +12,11 @@ public class run {
 		c.doMarge(f);
 		b.doDNC(f);
 
-		int[][] g = assignValue(makeFixedSizeArray(10,10));
+		int[][] g = assignValue(makeFixedSizeArray(1000,1000));
 		c.doMarge(g);
+	//	System.out.println(Arrays.toString(g));
 		b.doDNC(g);
+	
 	}
 	
 	static int[][] makeFixedSizeArray(int x,int y)
@@ -42,18 +45,19 @@ public class run {
 				}
 				else
 				{
-					temp[i][j]=new Random().nextInt();
+					temp[i][j]=new Random().nextInt(20);
 				}
 			}
 		}		
+		System.out.println("Finished assigning");
 		return temp;		
 	}
 	static int getNotSmallerRandom(int before)
 	{
-		int i=Integer.MIN_VALUE;
-		while(i<before)
+		int i=0;
+		while(i<=before)
 		{
-			i=new Random().nextInt();
+			i=new Random().nextInt(20)+before;
 		}
 		return i;
 	}

@@ -23,15 +23,13 @@ public class Merge {
 		{
 			if(s1[i]<s2[j])
 			{
-				res[k]=s1[i];
-				i++;
-				k++;
+				res[k++]=s1[i++];
+				
 			}
 			else
 			{
-				res[k]=s2[j];
-				j++;
-				k++;
+				res[k++]=s2[j++];
+				
 			}
 			
 		}
@@ -51,7 +49,13 @@ public class Merge {
         int n = arr.length;
         System.out.print("Merge:");
         for (int i=0; i<n; ++i)
+        {
             System.out.print(arr[i] + " ");
+	        if(i%10==0)
+	        {
+	        	System.out.println();
+	        }
+        }
         System.out.println();
     }
 }

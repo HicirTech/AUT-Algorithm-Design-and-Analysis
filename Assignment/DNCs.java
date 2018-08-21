@@ -1,3 +1,4 @@
+
 public class DNCs {
 	
    private void Divide(int arr[], int start, int middle, int end)
@@ -80,12 +81,18 @@ public class DNCs {
         }
     }
  
-    private void printArray(int arr[])
+    public void printArray(int arr[])
     {
     	System.out.print("Divide and conquer:");
         int n = arr.length;
         for (int i=0; i<n; ++i)
+        {
             System.out.print(arr[i] + " ");
+            if(i%10==0&&i!=0)
+            {
+            	System.out.println();
+            }
+        }
         System.out.println();
     }
     
