@@ -5,6 +5,7 @@ package Question_3;
  *
  */
 public class Merge {
+	
 
 	public int[] doMarge(int[][] array)
 	{
@@ -52,7 +53,7 @@ public class Merge {
 		}
 		return res;
 	}
-	private void printArray(int arr[])
+	public void printArray(int arr[])
     {
         int n = arr.length;
         System.out.print("Merge:");

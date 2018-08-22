@@ -20,7 +20,6 @@ public class DNCs {
         {
             S2[j] = arr[middle + 1+ j];
         }
- 
         this.merge(arr,start,S1,S2);
     }
         
@@ -53,7 +52,7 @@ public class DNCs {
         {
         	arrTarget[k++] = S2[j++];
         }
-    }
+       }
     
     
 
@@ -83,8 +82,10 @@ public class DNCs {
             this.doDivideAndConquer(arr, start, middle);
             this.doDivideAndConquer(arr , middle+1, end);
             this.Divide(arr, start, middle, end);  
+           // printArray(arr);
         }   
     }
+    
  
     public void printArray(int arr[])
     {

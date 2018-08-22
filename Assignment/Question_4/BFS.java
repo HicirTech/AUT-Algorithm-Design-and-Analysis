@@ -9,14 +9,14 @@ import java.util.Queue;
  */
 public class BFS {
 	
-	Queue<Nodes> order; 
+	Queue<Vertex> order; 
 	int lable=0;
 	BFS()
 	{
 		order= new LinkedList<>();
 	}
 	
-	boolean run(Nodes in)
+	boolean run(Vertex in)
 	{
 		in.lable=0;
 		this.order.add(in);
@@ -25,11 +25,11 @@ public class BFS {
 	
 	boolean doBFS()
 	{
-		Nodes current = this.order.poll();
+		Vertex current = this.order.poll();
 		current.isVisited=true;
-		ArrayList<Nodes> outer =current.out;
+		ArrayList<Vertex> outer =current.out;
 		
-		for(Nodes e: outer) 
+		for(Vertex e: outer) 
 		{
 			if(!e.isVisited)
 			{
@@ -47,11 +47,11 @@ public class BFS {
 					this.lable=1;
 				}
 				e.lable=this.lable;
-				for(Nodes checkOut : e.out)
+				for(Vertex checkOut : e.out)
 				{
 					if(checkOut.lable==e.lable)
 					{
-						System.out.println("Odd cycle Found!!!");
+						System.out.println("[BFS]Odd cycle Found!!!");
 						return true;
 					}
 				}
