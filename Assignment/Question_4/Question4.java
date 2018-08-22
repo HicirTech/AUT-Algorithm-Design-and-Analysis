@@ -57,13 +57,13 @@ public class Question4 {
 	}
 	static void printResultTable(boolean[] results)
 	{
-		System.out.println("Result table");
+		System.out.println("Result table(Is it a bipartite)");
 		for(int i = 0,j=10;i!=results.length;j+=10)
 		{
 			System.out.print("Order "+j+" graph"+"		"+ "BSF: "+results[i++]
 					+"		"+"DFS: "+results[i++]+"\n");
 		}
-		System.out.println("This supports my analysis");
+		System.out.println("This supports my analysis, but it is very hard to get bipartite");
 	}
 	static boolean DFSIsBipartite()
 	{
