@@ -9,7 +9,7 @@ public class Merge {
 
 	public int[] doMarge(int[][] array)
 	{
-		long start=System.nanoTime();
+		//long start=System.nanoTime();
 		int[] temp = array[0];
 		for(int i=1;i!=array.length;i++)
 		{
@@ -17,8 +17,8 @@ public class Merge {
 		}
 		
 		//printArray(temp);
-		long ends = System.nanoTime();
-	    System.out.println("Merge took "+(ends-start)+" nano seconds to finish");
+		//long ends = System.nanoTime();
+	    
 		return temp;
 	}
 	

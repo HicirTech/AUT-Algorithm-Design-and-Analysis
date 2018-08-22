@@ -58,7 +58,7 @@ public class DNCs {
 
     public void doDNC(int[][] input)
     {
-    	long start=System.nanoTime();
+    //	long start=System.nanoTime();
     	int [] totalArray = new int[input.length*input[0].length];
     	int totalIndex = 0;
     	for(int index=0;index!=input.length;index++)
@@ -70,8 +70,8 @@ public class DNCs {
     		}
     	}
     	this.doDivideAndConquer(totalArray,0,totalArray.length-1);
-		long ends = System.nanoTime();
-	    System.out.println("DivideAndConquer took "+(ends-start)+" nano seconds to finish");
+		//long ends = System.nanoTime();
+	    //System.out.println("DivideAndConquer took "+(ends-start)+" nano seconds to finish");
     }
 
     private void doDivideAndConquer(int arr[], int start, int end)

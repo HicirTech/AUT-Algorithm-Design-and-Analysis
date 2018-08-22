@@ -17,6 +17,8 @@ public class Question4 {
 	static Vertex[] nodes;
 	static Vertex[] DFSnodes;
 	public static void main(String args[]) {
+		boolean[] results = new boolean[20];
+		
 		System.out.println("[Question 4.3] Enter n to get random graph with order of n");
 		int n = new Scanner(System.in).nextInt();
 		graph = new int[n][n];
@@ -27,7 +29,7 @@ public class Question4 {
 		DFSIsBipartite();
 		
 		System.out.println();
-		for(int i=10;i<=101;i+=10)
+		for(int i=10,j=0;i<=101;i+=10)
 		{
 			System.out.println("[Question 4.5]now doing order "+i+" ramdon graph");
 			graph = new int[i][i];		
@@ -36,23 +38,39 @@ public class Question4 {
 			DFSnodes=nodes.clone();//copy of graph
 		
 			long start=System.nanoTime();
-			BFSIsBipartite();
+			results[j++]=BFSIsBipartite();
 			long ends = System.nanoTime();
 			System.out.println("BFS took "+(ends-start)+" nano seconds to finish");
 			start=System.nanoTime();
-			DFSIsBipartite();
+			
+			
+			
+			results[j++]=DFSIsBipartite();
 			ends = System.nanoTime();
 			System.out.println("DFS took "+(ends-start)+" nano seconds to finish");
 			System.out.println();
 		}
+		
+		
+		printResultTable(results);
+		
 	}
-	
-	static void DFSIsBipartite()
+	static void printResultTable(boolean[] results)
+	{
+		System.out.println("Result table");
+		for(int i = 0,j=10;i!=results.length;j+=10)
+		{
+			System.out.print("Order "+j+" graph"+"		"+ "BSF: "+results[i++]
+					+"		"+"DFS: "+results[i++]+"\n");
+		}
+		System.out.println("This supports my analysis");
+	}
+	static boolean DFSIsBipartite()
 	{
 		DFS dfs = new DFS();//Question 4.4, Question 4.5
-		dfs.dfsUsingStack(DFSnodes);
+		return dfs.DFSUsingStack(DFSnodes);
 	}
-	static void BFSIsBipartite()
+	static boolean  BFSIsBipartite()
 	{
 		
 		boolean isNotFound=true;
@@ -68,7 +86,7 @@ public class Question4 {
 				{
 					System.out.println("[BFS]Is this a bipartite? : "+!checker);
 					isNotFound=false;
-					return;
+					return isNotFound;
 				}
 			}
 		}
@@ -78,8 +96,8 @@ public class Question4 {
 			System.out.println("[BFS]Is this a bipartite? : "+isNotFound);
 		}
 		
+		return isNotFound;	
 	   
-
 	}
 	
 	

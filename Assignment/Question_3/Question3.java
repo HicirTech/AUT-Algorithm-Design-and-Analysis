@@ -10,26 +10,55 @@ import java.util.Scanner;
 public class Question3 {
 
 	public static void main(String[] args) {
-		
+		long[] times= new long[20];
 		DNCs dnc = new DNCs();//Question 3.4
 		Merge m = new Merge();
 		
 		int[][] Ramdon2DArray = getRamdonArray();
-		m.doMarge(Ramdon2DArray);
+		long start=System.nanoTime();
 		dnc.doDNC(Ramdon2DArray);
+		long ends = System.nanoTime();
+		System.out.println("DivideAndConquer took "+(ends-start)+" nano seconds to finish");
 		
+	    start=System.nanoTime();
+		m.doMarge(Ramdon2DArray);
+		ends = System.nanoTime();
+		System.out.println("Merge took "+(ends-start)+" nano seconds to finish");
+	
 		System.out.println();
 
-		for(int i=100,j=0;i<1001;i+=100,j++)
+		for(int i=100,j=0;i<1001;i+=100)
 		{
 			
 			int[][] g = assignValue(makeFixedSizeArray(i,i));
-			m.doMarge(g);
-		//	System.out.println("_______________________________________________________________");
+			start=System.nanoTime();
 			dnc.doDNC(g);
+			ends = System.nanoTime();
+			System.out.println("DivideAndConquer took "+(ends-start)+" nano seconds to finish");
+			times[j++]=ends-start;
+			start=System.nanoTime();
+			m.doMarge(g);
+			ends = System.nanoTime();
+			System.out.println("Merge took "+(ends-start)+" nano seconds to finish");
+			times[j++]=ends-start;
+			
 			System.out.println();
 		}	
-		System.out.println("[Question 3.6] this supports my analysis!");
+		
+		printRunTime(times);
+	}
+	
+	
+	static void printRunTime(long[] times)
+	{
+		System.out.println("Run time table(Unit: nanosecond):  ");
+		for(int i = 0,j=100;i!=times.length;j+=100)
+		{
+			System.out.print("ArraySize: "+j+" x "+j+"		");
+			System.out.print("DivideAndConquer: "+times[i++]+"		");
+			System.out.println("Merge: "+times[i++]);
+		}
+		System.out.println("[Question 3.6] this supports my analysis!");	
 	}
 	static void printTimeTable(int[] merge,int[] dnc)
 	{

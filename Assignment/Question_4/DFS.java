@@ -11,7 +11,7 @@ import java.util.Stack;
 public class DFS {
 
 	
-	public static void dfsUsingStack(Vertex[] nodes)
+	public boolean DFSUsingStack(Vertex[] nodes)
 	{
 		Vertex node=nodes[0];
 		Stack<Vertex> stack=new  Stack<Vertex>();
@@ -52,7 +52,7 @@ public class DFS {
 					System.out.println("[DFS]Odd cycle Found!!!");
 					isCycle=true;
 					System.out.println("[DFS]Is this a bipartite? : "+!isCycle);
-					return;
+					return !isCycle;
 				}
 				
 			}
@@ -60,7 +60,8 @@ public class DFS {
 		if(isCycle==false)
 		{
 			System.out.println("[DFS]Is this a bipartite? : "+!isCycle);
+			return !isCycle;
 		}
-		
+		return false;
 	}
 }
