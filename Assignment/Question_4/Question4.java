@@ -24,6 +24,8 @@ public class Question4 {
 		graph = new int[n][n];
 		createGraph(graph);
 		makeList(graph);
+	
+
 		DFSnodes=nodes.clone();//copy of graph
 		BFSIsBipartite();
 		DFSIsBipartite();

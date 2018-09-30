@@ -7,5 +7,7 @@
 	<classpathentry kind="src" path="Week4"/>
 	<classpathentry kind="src" path="Assignment"/>
 	<classpathentry kind="src" path="laji"/>
+	<classpathentry kind="src" path="Week5"/>
+	<classpathentry kind="src" path="Week7"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
