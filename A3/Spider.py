@@ -1,9 +1,22 @@
-import SpiderLeg
+import collections
 
-def Run():
-    SpiderLeg.getTitle("http://ashuyun.tk/WP")
-    SpiderLeg.getHyperLink("http://ashuyun.tk/WP")
-    SpiderLeg.getImage("http://ashuyun.tk/WP")
-    SpiderLeg.getMeta("http://ashuyun.tk/WP")
+def bfs(graph, root):
+    seen, queue = set([root]), collections.deque([root])
+    while queue:
+        vertex = queue.popleft()
+        visit(vertex)
+        for node in graph[vertex]:
+            if node not in seen:
+                seen.add(node)
+                queue.append(node)
 
-if __name__ == '__main__': Run()
+def visit(n):
+    print(n)
+
+if __name__ == '__main__':
+    graph = {
+        0: [1, 2], 
+        1: [2, 0], 
+        2: []
+        } 
+    bfs(graph, 0)

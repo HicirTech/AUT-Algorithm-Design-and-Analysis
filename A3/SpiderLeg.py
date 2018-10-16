@@ -13,8 +13,14 @@ def getTitle(url):
     page_soup = soup(page_html,'html.parser')
     title = str(page_soup.title)[7:-8]
     print(title)
-
+'''
+this function will get the hyperlink in the URL
+but it will not get any think looks like javascript
+also any email addressl, .css. mp3 or #header
+will not be get
+'''
 def getHyperLink(url):
+    linkSet = set()
     myUrl = url
     uClient = uReq(myUrl)
     page_html = uClient.read()
@@ -32,10 +38,21 @@ def getHyperLink(url):
             link= (link_Str.split('<a href="')[1])
             link=(link.split('"')[0])
 
-            if(('javascript:' not in link )& ('@' not in link)):
+            if(('javascript:' not in link )&
+                ('@' not in link)&
+                ('.css' not in link)&
+                ('/page'not in link)&
+                ('.mp3' not in link)&
+                ('#respond'not in link)&
+                ('#head' not in link)&
+                (len(link)!=1)&
+                ('http' in link)
+                ):
                 link = fixUrl(link)
-
-                print(link)
+                #print(link)
+                #print('============================================')
+                linkSet.add(link)
+    return linkSet
 
 def fixUrl(url):
     if(url[0:2]=='//'):
@@ -43,6 +60,7 @@ def fixUrl(url):
     return url
 
 def getImage(url):
+    imageUrlSet = set()
     myUrl = url
     uClient = uReq(myUrl)
     page_html = uClient.read()
@@ -53,7 +71,8 @@ def getImage(url):
         response = requests.get(fixUrl(img.get("src")))
         imageBuffer = Image.open(BytesIO(response.content))
         print(f'name: {img.get("title")} , URL: {fixUrl(img.get("src"))}, width: {imageBuffer.size[0]} , height {imageBuffer.size[1]}, alt: {img.get("alt")}')
-
+        imageUrlSet.add(fixUrl(img.get("src")))
+    return imageUrlSet
 
 def getMeta(url):
     myUrl = url
@@ -67,10 +86,9 @@ def getMeta(url):
         if('keyword' in str(meta).lower()):
             print(f"keyword: {meta.get('content')}")
 
-def Run():
-    getTitle("http://ashuyun.tk/WP")
-    getHyperLink("http://ashuyun.tk/WP")
-    getImage("http://ashuyun.tk/WP")
-    getMeta("http://ashuyun.tk/WP")
 
-if __name__ == '__main__': Run()
+if __name__ == '__main__':
+    #getHyperLink('http://ashuyun.tk/WP')
+    #getTitle('https://www.newegg.com')
+    getImage('http://www.ifixit.com/Teardown/PlayStation+4+Pro+Teardown/72946')
+    #getMeta('https://www.newegg.com')
