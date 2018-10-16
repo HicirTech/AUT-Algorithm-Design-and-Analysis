@@ -38,18 +38,18 @@ public class Q3GUI {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Q3GUI window = new Q3GUI();
-					window.frmAdaassignmentquestionagui.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Q3GUI window = new Q3GUI();
+//					window.frmAdaassignmentquestionagui.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the application.
@@ -104,10 +104,10 @@ public class Q3GUI {
 		JLabel lblNewLabel_1 = new JLabel("Desctiption");
 		
 		KeyWordTextArea = new JTextPane();
-		KeyWordTextArea.setText("This will show when you select from url from left side\r\n");
+		KeyWordTextArea.setText("This will show when you select from url from left side,if key input is empty, will show all result\r\n");
 		
 		DescTextArea = new JTextPane();
-		DescTextArea.setText("This will show when you select from url from left side\r\n");
+		DescTextArea.setText("This will show when you select from url from left side,if key input is empty, will show all result\r\n");
 		
 		GroupLayout groupLayout = new GroupLayout(frmAdaassignmentquestionagui.getContentPane());
 		groupLayout.setHorizontalGroup(

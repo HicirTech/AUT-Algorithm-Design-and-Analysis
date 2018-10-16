@@ -21,16 +21,18 @@ public class SpiderLeg {
 	public Document setup(String url)
 	{
 		Document doc = null;
-        try {
-			doc = Jsoup.connect(url).get();
-		} catch(UnknownHostException e)
-        {
-			e.printStackTrace();
-        }
-        catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+	        try {
+				doc = Jsoup.connect(url).get();
+			} catch(UnknownHostException e)
+	        {
+				e.printStackTrace();
+	        }
+	        catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
         return doc;
        
 	}
@@ -43,8 +45,7 @@ public class SpiderLeg {
         	String theUrl = link.toString().split("\"")[1];
         	if(urlFilter(theUrl))
         	{
-        		//System.out.println(theUrl);
-        		returnlinks.add(fixUrl(theUrl,false));
+        		returnlinks.add(theUrl);
         	}
         }
         
@@ -64,7 +65,7 @@ public class SpiderLeg {
 				!url.contains(".apk")&&
 				!url.contains("www.ifanr.com")&&
 				url.contains("http")&&				
-				url.length()>1;
+				url.length()>4;
 	}
 	public String getTitle(String url)
 	{
