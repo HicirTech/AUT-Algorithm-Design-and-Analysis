@@ -20,7 +20,13 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.ListSelectionModel;
 import javax.swing.ScrollPaneConstants;
-
+import java.awt.Font;
+/**
+ * this class is GUI for ADA-assignment 2
+ * Question 3
+ * @author Luo Zeting ID:16938158
+ *
+ */
 public class Q3GUI {
 
 	public JFrame frmAdaassignmentquestionagui;
@@ -32,24 +38,9 @@ public class Q3GUI {
 	public JButton runButton;
 	public JTextPane KeyWordTextArea;
 	public JTextPane DescTextArea;
+	public JTextField MaxPageInput;
 	
 	
-
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Q3GUI window = new Q3GUI();
-//					window.frmAdaassignmentquestionagui.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
 
 	/**
 	 * Create the application.
@@ -64,7 +55,8 @@ public class Q3GUI {
 	public void initialize() {
 		frmAdaassignmentquestionagui = new JFrame();
 		frmAdaassignmentquestionagui.setType(Type.UTILITY);
-		frmAdaassignmentquestionagui.setTitle("ADA-Assignment2-Question3-a-GUI");
+		frmAdaassignmentquestionagui.setAlwaysOnTop(true);
+		frmAdaassignmentquestionagui.setTitle("ADA-Assignment2-Question3-GUI");
 		frmAdaassignmentquestionagui.setBounds(100, 100, 1024, 768);
 		frmAdaassignmentquestionagui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -81,7 +73,7 @@ public class Q3GUI {
 		
 		runButton = new JButton("Run BFS");
 		
-		JLabel BfsDeepLable = new JLabel("BFS Deeth");
+		JLabel BfsDeepLable = new JLabel("BFS Depth");
 		
 		BFSinput = new JTextField();
 		BFSinput.setColumns(10);
@@ -93,7 +85,7 @@ public class Q3GUI {
 		
 		JLabel lblLuoZeting = new JLabel("Luo Zeting 16938158");
 		
-		ResultSet = new JList();
+		ResultSet = new JList(); 
 		ResultSet.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		JScrollPane set= new JScrollPane(ResultSet,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		
@@ -109,47 +101,71 @@ public class Q3GUI {
 		DescTextArea = new JTextPane();
 		DescTextArea.setText("This will show when you select from url from left side,if key input is empty, will show all result\r\n");
 		
+		JLabel lblMaxSubPage = new JLabel("Max page number to search\r\n");
+		
+		MaxPageInput = new JTextField();
+		MaxPageInput.setColumns(10);
+		
+		JLabel lblPleaseInput = new JLabel("\u2190 Please input, it is no way to run infinity website");
+		lblPleaseInput.setFont(new Font("Arial", Font.BOLD, 11));
+		
+		JLabel lblIfNoKey = new JLabel("If no key word input, all result will be showed");
+		
 		GroupLayout groupLayout = new GroupLayout(frmAdaassignmentquestionagui.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(21)
-					.addComponent(httpLable, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
-					.addGap(21)
-					.addComponent(URLlable, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(21)
-					.addComponent(httpBox, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
-					.addGap(21)
-					.addComponent(URLInput, GroupLayout.PREFERRED_SIZE, 804, GroupLayout.PREFERRED_SIZE))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(21)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(21)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblResualt, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
-								.addComponent(set, GroupLayout.PREFERRED_SIZE, 586, GroupLayout.PREFERRED_SIZE))
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(DescTextArea, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
-								.addComponent(KeyWordTextArea, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
-								.addComponent(lblKeyWord_1, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE))
-							.addContainerGap())
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblResualt, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
+										.addComponent(set, GroupLayout.PREFERRED_SIZE, 586, GroupLayout.PREFERRED_SIZE))
+									.addGap(18)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(DescTextArea, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+										.addComponent(KeyWordTextArea, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+										.addComponent(lblKeyWord_1, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(BfsDeepLable)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(BFSinput, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
+									.addGap(31)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblIfNoKey)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(lblKeyWord)
+											.addGap(4)
+											.addComponent(KeyWordInput, GroupLayout.PREFERRED_SIZE, 471, GroupLayout.PREFERRED_SIZE)
+											.addGap(18)
+											.addComponent(runButton, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE))))))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(BfsDeepLable)
+							.addContainerGap()
+							.addComponent(lblLuoZeting, GroupLayout.PREFERRED_SIZE, 241, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(21)
-							.addComponent(BFSinput, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
-							.addGap(11)
-							.addComponent(lblKeyWord)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(httpBox, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(URLInput, GroupLayout.PREFERRED_SIZE, 348, GroupLayout.PREFERRED_SIZE))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(httpLable, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
+									.addGap(21)
+									.addComponent(URLlable, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)))
 							.addGap(21)
-							.addComponent(KeyWordInput, GroupLayout.PREFERRED_SIZE, 471, GroupLayout.PREFERRED_SIZE)
-							.addGap(21)
-							.addComponent(runButton, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE))))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblLuoZeting, GroupLayout.PREFERRED_SIZE, 241, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(736, Short.MAX_VALUE))
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(MaxPageInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(lblPleaseInput))
+								.addComponent(lblMaxSubPage))))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -157,44 +173,42 @@ public class Q3GUI {
 					.addGap(21)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addComponent(httpLable)
-						.addComponent(URLlable))
-					.addGap(21)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+							.addComponent(URLlable)
+							.addComponent(lblMaxSubPage)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(httpBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(URLInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(27)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(4)
-							.addComponent(BfsDeepLable))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(1)
-							.addComponent(BFSinput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(4)
-							.addComponent(lblKeyWord))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(1)
-							.addComponent(KeyWordInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(URLInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(MaxPageInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblPleaseInput))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblIfNoKey)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(BfsDeepLable)
+						.addComponent(BFSinput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblKeyWord)
+						.addComponent(KeyWordInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(runButton))
-					.addGap(17)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(3)
+							.addComponent(lblResualt)
+							.addGap(1)
+							.addComponent(set, GroupLayout.PREFERRED_SIZE, 430, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblLuoZeting)
+							.addGap(9))
+						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(lblKeyWord_1)
 							.addGap(7)
 							.addComponent(KeyWordTextArea, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(lblNewLabel_1)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(DescTextArea, GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblResualt)
-							.addGap(1)
-							.addComponent(set, GroupLayout.PREFERRED_SIZE, 430, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblLuoZeting)
-					.addGap(9))
+							.addComponent(DescTextArea, GroupLayout.PREFERRED_SIZE, 215, Short.MAX_VALUE)
+							.addContainerGap())))
 		);
 		frmAdaassignmentquestionagui.getContentPane().setLayout(groupLayout);
 	}

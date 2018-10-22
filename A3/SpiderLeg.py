@@ -49,8 +49,8 @@ def getHyperLink(url):
                 ('http' in link)
                 ):
                 link = fixUrl(link)
-                #print(link)
-                #print('============================================')
+                print(link)
+                print('============================================')
                 linkSet.add(link)
     return linkSet
 
@@ -88,7 +88,7 @@ def getMeta(url):
 
 
 if __name__ == '__main__':
-    #getHyperLink('http://ashuyun.tk/WP')
+    print(getHyperLink('https://www.blizzard.com/en-us/'))
     #getTitle('https://www.newegg.com')
-    getImage('http://www.ifixit.com/Teardown/PlayStation+4+Pro+Teardown/72946')
+   # getImage('http://www.ifixit.com/Teardown/PlayStation+4+Pro+Teardown/72946')
     #getMeta('https://www.newegg.com')
